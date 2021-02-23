@@ -1,0 +1,12 @@
+#!/bin/bash
+  [[ -z "$1" ]] && echo "Please enter a commit message:";
+    typeset msg="$( [[ -n "$1" ]] && echo "$*" || echo $(head -1) )";
+    git pull;
+    git add .;
+    git commit -m "$msg";
+    git push;
+    date
+
+        arg=$(echo $1 $2 $3 $4 $5 $6 $7 $8 $9  | sed 's/ /%20/g')
+
+   curl -X POST -H "Content-Type: application/json" -d '{"value2":"<-- commit was pushed to one of your repos on"}' https://maker.ifttt.com/trigger/notify/with/key/yourprivatekey?value1=$arg
