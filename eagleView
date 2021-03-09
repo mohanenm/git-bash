@@ -1,0 +1,31 @@
+#!/bin/bash
+     
+	echo "## Repo overview for ## " >> eagle-eye.md
+    date >> eagle-eye.md
+    git checkout master
+
+ 
+    	echo -e "## MASTER" >> eagle-eye.md
+    git ls-tree --full-tree -r --name-only HEAD >> eagle-eye.md
+    git checkout parking-lot
+
+
+    	echo -e "## PARKING LOT" >> eagle-eye.md 
+    git ls-tree --full-tree -r --name-only HEAD >> eagle-eye.md
+    git checkout todo
+
+
+    	echo -e "## TODO"  >> eagle-eye.md
+    git ls-tree --full-tree -r --name-only HEAD >> eagle-eye.md
+    git checkout doing
+
+
+	 echo -e "## DOING"  >> eagle-eye.md
+    git ls-tree --full-tree -r --name-only HEAD >> eagle-eye.md
+    git checkout done
+
+
+    	echo -e "## DONE" >> eagle-eye.md
+    git ls-tree --full-tree -r --name-only HEAD >> eagle-eye.md
+    git checkout master 
+    echo "Check out eagle-eye.md"
